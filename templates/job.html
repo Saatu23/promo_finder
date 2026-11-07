@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}Finding promos · Promo Finder{% endblock %}
+{% block width %}narrow{% endblock %}
+{% block body %}
+<h1 class="page">Finding promos in {{ J.title }}</h1>
+<p class="quiet">{{ J.episodes }} episodes, using {{ J.who }}. You can leave this page open; it updates by itself.</p>
+<div class="progress"><span id="fill" style="width: {{ J.pct }}%"></span></div>
+<p id="stage" class="read">{{ J.stage }}</p>
+<p id="err" class="error" {% if not J.error %}hidden{% endif %}>{{ J.error }}</p>
+<form id="done" method="post" action="{{ url_for('job_open', job=job) }}" {% if J.status != 'done' %}hidden{% endif %}>
+  <button class="btn primary">See the promos</button>
+</form>
+<script>
+  const tick = async () => {
+    const r = await fetch("{{ url_for('job_status', job=job) }}"); const j = await r.json();
+    document.getElementById("fill").style.width = j.pct + "%";
+    document.getElementById("stage").textContent = j.status === "done" ? "Done." :
+      (j.total > 1 ? `${j.stage}: ${j.done} of ${j.total}` : j.stage);
+    if (j.status === "done") { document.getElementById("done").hidden = false; return; }
+    if (j.status === "error") { const e = document.getElementById("err"); e.hidden = false;
+      e.textContent = "The run stopped: " + j.error; return; }
+    setTimeout(tick, 2000);
+  };
+  {% if J.status == 'running' %}setTimeout(tick, 1500);{% endif %}
+</script>
+{% endblock %}

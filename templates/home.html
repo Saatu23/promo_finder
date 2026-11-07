@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block body %}
+<section class="hero">
+  <h1>{{ run_title }}</h1>
+  {% if show.premise %}<p class="premise">{{ show.premise }}</p>{% endif %}
+</section>
+
+<section>
+  <div class="section-head">
+    <h2>Post these {{ picks|length }} first</h2>
+    <p class="quiet">In this order. Tap a promo to see where to cut it and to approve it.
+      {% if decided %}You've decided on {{ decided }} of {{ picks|length }}.{% endif %}</p>
+  </div>
+  <ol class="grid">
+    {% for v in picks %}
+    <li>
+      <a class="card" href="{{ url_for('promo', pid=v.id) }}" style="--c: {{ v.colour }}">
+        <div class="card-top">
+          <span class="num">{{ v.n }}</span>
+          <span class="kind">{{ v.kind }}</span>
+          {% if v.decision == 'approved' %}<span class="badge ok">Approved</span>{% elif v.decision == 'rejected' %}<span class="badge no">Rejected</span>{% endif %}
+          <span class="len">{{ v.length }}</span>
+        </div>
+        <h3>{{ v.title }}</h3>
+        <p class="opens">{{ v.hook }}</p>
+        <p class="where">{{ v.where }}</p>
+      </a>
+    </li>
+    {% endfor %}
+  </ol>
+</section>
+
+<p class="more">
+  Want more? See <a href="{{ url_for('all_promos') }}">all {{ total }} promos</a>, read
+  <a href="{{ url_for('how') }}">how it works</a>, or download the
+  <a href="{{ url_for('download', what='promos.csv') }}">list as a spreadsheet</a>.
+</p>
+{% endblock %}

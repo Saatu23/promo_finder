@@ -1,0 +1,103 @@
+{
+  "show": {
+    "episodes": 50,
+    "minutes": 102.7,
+    "premise": "After being abandoned at the altar, a disgraced noblewoman marries a scarred stranger, unknowingly tying her fate to a presumed-dead duke seeking vengeance."
+  },
+  "stats": {
+    "speaker_labels": 64,
+    "speaker_labels_unmapped": 0,
+    "proposed": 200,
+    "failed_rules_first_try": 32,
+    "repaired_ok": 105,
+    "near_duplicates_in_episode": 55,
+    "repair_still_invalid": 3,
+    "rule_failures": {
+      "hook line starts 3.9s into the clip": 2,
+      "too long": 2,
+      "hook line 11": 1,
+      "hook line starts 4.0s into the clip": 1,
+      "hook line starts 4.3s into the clip": 1,
+      "hook line starts 5.3s into the clip": 1,
+      "hook line starts 8.8s into the clip": 2,
+      "hook line starts 6.0s into the clip": 1,
+      "hook line starts 8.6s into the clip": 1,
+      "hook line starts 3.8s into the clip": 1,
+      "hook line 20": 1,
+      "hook line starts 3.1s into the clip": 1,
+      "too short": 10,
+      "hook line starts 4.2s into the clip": 1,
+      "hook line starts 3.4s into the clip": 2,
+      "hook line starts 5.8s into the clip": 1,
+      "hook line starts 5.2s into the clip": 1,
+      "hook line starts 4.4s into the clip": 1,
+      "hook line starts 9.2s into the clip": 1,
+      "hook line starts 3.5s into the clip": 2,
+      "hook line starts 11.2s into the clip": 1
+    },
+    "seconds": 1434.2,
+    "data_warnings": {}
+  },
+  "usage": {
+    "calls": 271,
+    "cached_calls": 0,
+    "by_stage": {
+      "bible": {
+        "calls": 1,
+        "prompt_tokens": 25125,
+        "output_tokens": 8266,
+        "cost_usd": 0.112082,
+        "model": "gemini:gemini-3.5-flash"
+      },
+      "propose": {
+        "calls": 22,
+        "prompt_tokens": 347925,
+        "output_tokens": 229901,
+        "cost_usd": 1.158434,
+        "model": "gemini:gemini-3.5-flash"
+      },
+      "repair": {
+        "calls": 11,
+        "prompt_tokens": 172381,
+        "output_tokens": 92368,
+        "cost_usd": 0.416092,
+        "model": "gemini:gemini-3.5-flash"
+      },
+      "blind": {
+        "calls": 218,
+        "prompt_tokens": 187330,
+        "output_tokens": 32184,
+        "cost_usd": 0.095107,
+        "model": "gemini:gemini-3.1-flash-lite"
+      },
+      "judge": {
+        "calls": 18,
+        "prompt_tokens": 271345,
+        "output_tokens": 31990,
+        "cost_usd": 0.161381,
+        "model": "gemini:gemini-3.5-flash-lite"
+      },
+      "plan": {
+        "calls": 1,
+        "prompt_tokens": 1978,
+        "output_tokens": 448,
+        "cost_usd": 0.001713,
+        "model": "gemini:gemini-3.5-flash-lite"
+      }
+    },
+    "prompt_tokens": 1006084,
+    "output_tokens": 395157,
+    "cost_usd_this_run": 1.9448,
+    "fallbacks_used": [
+      "propose: gemini:gemini-3.5-flash daily quota exhausted",
+      "repair: gemini:gemini-3-flash-preview daily quota exhausted"
+    ]
+  },
+  "models": {
+    "bible": "gemini:gemini-3.5-flash",
+    "propose": "gemini:gemini-3.5-flash",
+    "blind": "gemini:gemini-3.1-flash-lite",
+    "judge": "gemini:gemini-3.5-flash",
+    "plan": "gemini:gemini-3.5-flash"
+  }
+}

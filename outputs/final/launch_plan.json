@@ -1,0 +1,45 @@
+{
+  "strategy": "We will balance top-scoring engagement drivers with a diverse mix of tropes like danger, betrayal, and romance. Early episodes are prioritized to feed the Episode 1 funnel naturally while avoiding ending spoilers.",
+  "order": [
+    {
+      "id": "E31-4",
+      "reason": "Highest scoring promo with an agonizingly abrupt visual cliffhanger and high tension."
+    },
+    {
+      "id": "E15-3",
+      "reason": "Combines maximum victimization with an ultimate hero-rescue setup early in the season."
+    },
+    {
+      "id": "E05-1",
+      "reason": "Visceral cruelty and high emotional stakes instantly make viewers angry and engaged."
+    },
+    {
+      "id": "E03-4",
+      "reason": "Pure microdrama wish-fulfillment fantasy beat providing romantic variety."
+    },
+    {
+      "id": "E32-4",
+      "reason": "Devastating verbal humiliation paired with ultimate physical peril right at the cut."
+    },
+    {
+      "id": "E27-6",
+      "reason": "Exceptional villain setup, high injustice, and a terrifying physical struggle."
+    },
+    {
+      "id": "E33-2",
+      "reason": "Extremely high stakes involving a child that instantly make viewers hate the villain."
+    },
+    {
+      "id": "E26-1",
+      "reason": "High physical drama, instant mystery, and strong emotional stakes tied to a ring."
+    },
+    {
+      "id": "E05-4",
+      "reason": "Great protective hero moment setting up a strong threatening payoff."
+    },
+    {
+      "id": "E50-4",
+      "reason": "High-stakes witness reveal used carefully as our single late-episode test."
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "about": "Reference promos for 12 of the 50 episodes. Drafted by reading the scripts (with Claude, a different model family from the Gemini models the tool uses), then reviewed by hand. Each entry is one promo an editor would cut: start/end line IDs and the core line the clip must contain. Not exhaustive: the tool can find good promos that are not listed here, so 'precision' against this set is a lower bound.",
+  "hit_rule": "a tool promo matches a reference promo if time-IoU >= 0.35, or if it contains the core line and IoU >= 0.20",
+  "promos": [
+    {"id": "G01a", "start_ref": "1:007", "end_ref": "1:026", "core_ref": "1:026", "note": "'You should turn around' -> sister: 'Because he is marrying me.' Altar betrayal reveal."},
+    {"id": "G01b", "start_ref": "1:054", "end_ref": "1:076", "core_ref": "1:074", "note": "Father won't look at her -> 'You are the daughter people tolerate... I am the daughter they choose.'"},
+    {"id": "G03a", "start_ref": "3:046", "end_ref": "3:073", "core_ref": "3:058", "note": "'Guards! Remove her!' -> stranger: 'Take your hands off her', drops a guard, groom: 'He's only one man!'"},
+    {"id": "G03b", "start_ref": "3:082", "end_ref": "3:115", "core_ref": "3:111", "note": "Stranger defends her, kneels with a ring: 'Lady Juliana... accept my hand.' Ends before her answer."},
+    {"id": "G05a", "start_ref": "5:023", "end_ref": "5:036", "core_ref": "5:031", "note": "Stepmother flings her dead mother's ledger into the mud; sister and ex laugh."},
+    {"id": "G05b", "start_ref": "5:006", "end_ref": "5:017", "core_ref": "5:016", "note": "Father disowns her on the church steps: 'you are dead to the Ashcroft family' -> 'You are my father!'"},
+    {"id": "G07a", "start_ref": "7:025", "end_ref": "7:041", "core_ref": "7:035", "note": "Ex mocks her 'scarred beggar' husband and threatens him -> husband walks up silently, ex freezes."},
+    {"id": "G11a", "start_ref": "11:015", "end_ref": "11:044", "core_ref": "11:015", "note": "'Your husband stole my gold pocket watch!' -> constable search -> 'Search it.'"},
+    {"id": "G11b", "start_ref": "11:062", "end_ref": "11:083", "core_ref": "11:078", "note": "Search of the cottage; watch pulled from the husband's coat: 'There it is.'"},
+    {"id": "G12a", "start_ref": "12:031", "end_ref": "12:053", "core_ref": "12:044", "note": "'I want to see you crawl, sister' - bare-handed in the thorns or he hangs -> 'Tell me where the garden is.'"},
+    {"id": "G13a", "start_ref": "13:022", "end_ref": "13:059", "core_ref": "13:035", "note": "She crawls into frozen blackthorn briars while they mock her and he screams."},
+    {"id": "G18a", "start_ref": "18:030", "end_ref": "18:047", "core_ref": "18:042", "note": "Burning cottage: she runs back into the fire for her mother's ledger, ceiling falls, he dives on her."},
+    {"id": "G24a", "start_ref": "24:018", "end_ref": "24:045", "core_ref": "24:023", "note": "'Then let her suffer.' Noblewoman strikes the 'maid' with a riding crop, sends her to scrub the hearth."},
+    {"id": "G27a", "start_ref": "27:011", "end_ref": "27:027", "core_ref": "27:019", "note": "Duchess recognises the ring: 'My lost son wore that ring!' 'What is your husband's name?' -> doors burst open."},
+    {"id": "G27b", "start_ref": "27:072", "end_ref": "27:090", "core_ref": "27:080", "note": "'Poison.' Villains twist it: 'She admits she has been giving the Duchess poison!' -> 'Take her.'"},
+    {"id": "G41a", "start_ref": "41:033", "end_ref": "41:051", "core_ref": "41:047", "note": "Chained heroine paraded at the villains' wedding -> cathedral doors explode, armed figures in the smoke."},
+    {"id": "G45a", "start_ref": "45:039", "end_ref": "45:054", "core_ref": "45:052", "note": "Duke denounces the villain, proclaims Juliana his wife and Duchess -> 'Juliana?!'"},
+    {"id": "G45b", "start_ref": "45:052", "end_ref": "45:069", "core_ref": "45:063", "note": "Proclaimed Duchess -> bishop bursts in: no Crown licence, 'You are not his lawful wife.'"}
+  ]
+}

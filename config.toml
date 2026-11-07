@@ -1,0 +1,68 @@
+# Promo Finder configuration.
+# To swap models, change provider/model here (or use CLI flags / env vars) - no code changes.
+# provider: "gemini" (Google AI Studio key in GEMINI_API_KEY), "openai" (any OpenAI-compatible
+# endpoint: set base_url + api_key_env), or "mock" (offline, for tests).
+# Prices are USD per 1M tokens, used only for cost estimates. Check ai.google.dev/pricing.
+
+[run]
+promos_per_episode = 4      # candidates asked for per episode
+use_next_episode = true     # let promos run into / join moments from the next episode
+workers = 4                 # parallel calls (the rate limiter still respects rpm)
+episodes_per_call = 3       # propose/judge batch size: fewer calls for tight free-tier daily quotas (1 = best quality)
+plan_top_k = 10             # how many promos the launch plan orders
+max_ranked = 40             # how many promos the ranked list keeps after de-duplication
+
+[weights]                   # final score = weighted 0-10 sub-scores - penalties + funnel bonus
+hook = 0.30
+cliffhanger = 0.30
+standalone = 0.25
+emotion = 0.15
+blind_share = 0.5           # sub-scores are percentile ranks within the show; share of hook/cliffhanger/standalone taken from the cold-viewer test
+spoiler_penalty = 0.6       # points per spoiler level (0-2)
+warning_penalty = 0.15      # points per rule warning (max 3 counted)
+funnel_bonus_max = 0.8      # bonus for episode 1, fading to 0 at the last episode (v3 had 0.4: a finale clip ranked #2)
+not_standalone_penalty = 1.5  # points off when judge standalone AND cold-viewer understood are both <= 4
+resolved_cliff_cap = 3.0    # cliffhanger sub-score cap when the judge or the cold viewer says the clip resolves itself
+same_episode_penalty = 0.4  # diversity: per already-ranked promo from the same episode
+same_trope_penalty = 0.1    # diversity: per already-ranked promo with the same trope (max 3)
+max_overlap_iou = 0.35      # drop a promo that overlaps a higher-ranked one more than this
+
+[models.default]
+provider = "gemini"
+model = "gemini-3.5-flash"
+fallback = ["gemini-3-flash-preview", "gemini-3.5-flash-lite"]  # used if a daily quota runs out or a model is retired
+# Nov 2026: gemini-2.5-* return 404 for new keys, and gemini-flash-latest takes ~2 min per call.
+temperature = 0.3
+rpm = 9
+
+[models.bible]              # one call per show: character alias map + spoiler list
+model = "gemini-3.5-flash"
+temperature = 0.1
+
+[models.propose]            # one call per episode (+ one repair call if rules fail)
+model = "gemini-3.5-flash"
+temperature = 0.4
+
+[models.blind]              # one call per promo: cold viewer who never saw the show
+model = "gemini-3.1-flash-lite"
+temperature = 0.2
+rpm = 14
+thinking_budget = 0         # 3.1 Flash-Lite accepts 0 (thinking off); 3.5 Flash-Lite rejects it, so no budget is sent on fallback
+fallback = ["gemini-3.5-flash-lite"]
+
+[models.judge]              # one call per episode: rubric scores with blind report attached
+model = "gemini-3.5-flash"
+temperature = 0.1
+
+[models.plan]               # one call per show: which promos to post first and why
+model = "gemini-3.5-flash"
+temperature = 0.2
+
+[prices]                    # USD per 1M tokens [input, output]; output includes thinking tokens
+"gemini-3.5-flash" = [1.50, 9.00]
+"gemini-3.5-flash-lite" = [0.30, 2.50]
+"gemini-3.1-flash-lite" = [0.25, 1.50]
+"gemini-3-flash-preview" = [0.50, 3.00]
+"gemini-2.5-flash" = [0.30, 2.50]
+"gemini-2.5-flash-lite" = [0.10, 0.40]
+"gemini-2.5-pro" = [1.25, 10.00]

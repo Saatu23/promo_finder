@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+{% block title %}{{ p.title }} · Promo Finder{% endblock %}
+{% block width %}narrow{% endblock %}
+{% block body %}
+<a class="back" href="{{ nav.back }}">← {{ nav.list }}</a>
+
+<article class="promo" style="--c: {{ p.colour }}">
+  <div class="promo-head">
+    <span class="num big">{{ p.n }}</span>
+    <div>
+      <h1>{{ p.title }}</h1>
+      <p class="meta"><span class="kind">{{ p.kind }}</span> {{ p.seconds }} seconds</p>
+    </div>
+  </div>
+
+  <div class="pair">
+    <div class="box open"><span class="lbl">Opens on</span><p>{{ p.hook }}</p></div>
+    <div class="box end"><span class="lbl">Cuts on</span><p>{{ p.cliff }}</p></div>
+  </div>
+
+  <h2 class="small">Why it works</h2>
+  <p class="read">{{ p.why }}</p>
+
+  <h2 class="small">Where to cut</h2>
+  <ul class="cuts">
+    {% for c in p.cuts %}
+    <li>Episode <b>{{ c.episode }}</b>, from <b>{{ c.start }}</b> to <b>{{ c.end }}</b> <span class="quiet">({{ c.secs }} s)</span></li>
+    {% endfor %}
+  </ul>
+
+  <section class="decide" id="decide">
+    {% if decision.decision == 'approved' %}
+      <p class="state ok">You approved this promo.</p>
+    {% elif decision.decision == 'rejected' %}
+      <p class="state no">You rejected this promo{% if decision.reason %}: “{{ decision.reason }}”{% endif %}.</p>
+    {% endif %}
+    <form method="post" action="{{ url_for('decide', pid=p.id) }}" class="decide-row">
+      <button name="decision" value="approved" class="btn primary">Approve</button>
+      <input name="reason" placeholder="Reason, if you reject it (optional)" value="{{ decision.reason or '' }}">
+      <button name="decision" value="rejected" class="btn">Reject</button>
+      {% if decision.decision %}<button name="decision" value="clear" class="link">Undo</button>{% endif %}
+    </form>
+  </section>
+
+  <details>
+    <summary>More details</summary>
+    <div class="details-in">
+      {% if reason %}<p class="read"><b>Why post it now:</b> {{ reason }}</p>{% endif %}
+      <p class="read">{{ p.agree }}.</p>
+      {% if p.risk %}<p class="read"><b>Watch out:</b> {{ p.risk }}</p>{% endif %}
+      {% for w in p.warnings %}<p class="warn">{{ w }}</p>{% endfor %}
+      {% if p.wonder %}<p class="read"><b>Someone seeing only this clip was left wondering:</b> “{{ p.wonder }}”</p>{% endif %}
+      <div class="bars">
+        <p class="quiet">Scores out of 10, compared with the rest of the show</p>
+        {% for b in p.bars %}
+        <div class="bar-row"><span>{{ b.label }}</span><span class="track"><span style="width: {{ (b.value * 10)|round|int }}%"></span></span><span>{{ '%.1f'|format(b.value) }}</span></div>
+        {% endfor %}
+      </div>
+    </div>
+  </details>
+
+  <details>
+    <summary>Read the script</summary>
+    <div class="script">
+      {% set ns = namespace(ep=None) %}
+      {% for l in p.clip %}
+        {% if ns.ep is not none and l.episode != ns.ep %}<p class="jump">Cut to episode {{ l.episode }}</p>{% endif %}
+        {% set ns.ep = l.episode %}
+        <div class="line {{ 'first3' if l.first3 }}">
+          <span class="t">{{ '%.1f'|format(l.t) }}s</span>
+          <div>
+            {% if l.kind == 'dialogue' %}<span class="who">{{ l.speaker|title }}</span>{% endif %}
+            <span class="txt {{ l.kind }} {{ 'hook' if l.hook }} {{ 'cliff' if l.cliff }}">{{ l.text }}</span>
+          </div>
+        </div>
+      {% endfor %}
+      <p class="cut">cut here, {{ p.seconds }} s</p>
+      <p class="quiet key"><span class="hl">Highlighted</span> is the hook. <span class="ul">Underlined</span> is the line it cuts on. The green edge marks the first 3 seconds.</p>
+    </div>
+  </details>
+</article>
+
+<nav class="pager">
+  {% if nav.prev %}<a href="{{ url_for('promo', pid=nav.prev) }}">← Previous</a>{% else %}<span></span>{% endif %}
+  {% if nav.next %}<a href="{{ url_for('promo', pid=nav.next) }}">Next →</a>{% endif %}
+</nav>
+{% endblock %}

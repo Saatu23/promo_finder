@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block title %}How it works · Promo Finder{% endblock %}
+{% block width %}narrow{% endblock %}
+{% block body %}
+<h1 class="page">How it works</h1>
+<p class="read">The tool read {{ show.episodes }} episodes ({{ show.minutes|round|int }} minutes of story). An AI model judges
+  the drama: which moments hook you and where to leave you hanging. Ordinary code then turns those picks into exact cut
+  points and checks every rule: 20 to 60 seconds, a hook in the first 3 seconds, and a cut on the cliffhanger.
+  A person approves each promo before it's posted.</p>
+
+<h2>Each step, and the AI model that did it</h2>
+<table class="steps">
+  <thead><tr><th>Step</th><th>Model</th><th>Calls</th><th>Cost</th></tr></thead>
+  <tbody>
+  {% for s in steps %}
+  <tr><td><b>{{ s.name }}</b><br><span class="quiet">{{ s.what }}</span></td>
+      <td>{{ s.used }}{% if s.note %}<br><span class="note">{{ s.note }}</span>{% endif %}</td>
+      <td>{{ s.calls }}</td><td>{{ s.cost|money }}</td></tr>
+  {% endfor %}
+  </tbody>
+</table>
+
+<h2>Checking the AI's work</h2>
+<p class="read">Of {{ stats.proposed }} first suggestions, {{ stats.failed_rules_first_try }} broke a rule
+  {%- if rule_failures %} ({% for k, n in rule_failures %}{{ k }}: {{ n }}{{ ', ' if not loop.last }}{% endfor %}){% endif %}.
+  Each was sent back once with the exact problem, and {{ stats.repair_still_invalid or 0 }} still couldn't be fixed and were dropped.</p>
+
+<h2>Time and cost</h2>
+<p class="read">
+  {% if calls and cached == calls %}
+    These results were reused from an earlier run{% if fresh %}; the first full run took {{ (fresh / 60)|round|int }} minutes on a free key{% endif %}.
+  {% else %}
+    This run took {{ '%.1f'|format(secs / 60) }} minutes.
+  {% endif %}
+  It costs nothing on a free Gemini key. At paid prices it would be about {{ cost|money }} with the models that answered,
+  or {{ full|money }} ({{ (full / show.episodes)|money }} per episode) if every step used Gemini 3.5 Flash.</p>
+{% endblock %}

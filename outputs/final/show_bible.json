@@ -1,0 +1,675 @@
+{
+  "premise": "After being abandoned at the altar, a disgraced noblewoman marries a scarred stranger, unknowingly tying her fate to a presumed-dead duke seeking vengeance.",
+  "characters": [
+    {
+      "name": "Lady Juliana Ashcroft",
+      "role": "Disowned noblewoman turned healer who unknowingly marries a missing duke.",
+      "labels": [
+        "LADY JULIANA",
+        "JULIANA"
+      ]
+    },
+    {
+      "name": "Duke Alexander Ashburn",
+      "role": "Presumed-dead duke disguised as a scarred veteran to reclaim his title.",
+      "labels": [
+        "THE BEARDED STRANGER",
+        "MYSTERIOUS BEARDED MAN",
+        "SCARRED BEARDED MAN",
+        "ALEXANDER"
+      ]
+    },
+    {
+      "name": "Lady Catherine",
+      "role": "Ambitious conspirator plotting to become duchess through murder and framing.",
+      "labels": [
+        "CATHERINE",
+        "LADY CATHERINE"
+      ]
+    },
+    {
+      "name": "Rupert Ashburn",
+      "role": "Alexander's treacherous cousin who usurped his title and attempted his murder.",
+      "labels": [
+        "BLOND NOBLEMAN",
+        "RUPERT"
+      ]
+    },
+    {
+      "name": "Clarissa Ashcroft",
+      "role": "Juliana's cruel sister who stole her fiancé and mocked her exile.",
+      "labels": [
+        "LADY IN GOLD GOWN",
+        "CLARISSA",
+        "LADY CLARISSA"
+      ]
+    },
+    {
+      "name": "Gerald Harrington",
+      "role": "Juliana's shallow ex-fiancé who abandoned her at the altar.",
+      "labels": [
+        "THE FORMER GROOM",
+        "GERALD"
+      ]
+    },
+    {
+      "name": "Lady Ashcroft",
+      "role": "Juliana's cold stepmother who disowned her and stole her legacy.",
+      "labels": [
+        "MATRIARCH",
+        "NOBLE MATRIARCH",
+        "LADY ASHCROFT",
+        "OFF-SCREEN VOICE"
+      ]
+    },
+    {
+      "name": "Dowager Duchess of Ashburn",
+      "role": "Alexander's poisoned mother who recognizes Juliana's ring and reveals the truth.",
+      "labels": [
+        "DOWAGER DUCHESS",
+        "ALEXANDER'S MOTHER",
+        "LADY ASHBOURNE"
+      ]
+    },
+    {
+      "name": "Lord Henry Sterling",
+      "role": "Treasonous noble behind Alexander's ambush and title theft.",
+      "labels": [
+        "LORD STERLING"
+      ]
+    },
+    {
+      "name": "Father Thomas",
+      "role": "Corrupt priest conspiring with Catherine to invalidate Alexander's marriage.",
+      "labels": [
+        "FATHER THOMAS"
+      ]
+    },
+    {
+      "name": "Prudence",
+      "role": "Village girl and scullery maid saved by Juliana who assists her.",
+      "labels": [
+        "PRUDENCE"
+      ]
+    },
+    {
+      "name": "Lord Ashcroft",
+      "role": "Juliana's callous father who disowned her.",
+      "labels": [
+        "LORD ASHCROFT"
+      ]
+    },
+    {
+      "name": "Royal Guard",
+      "role": "Guard serving the royal crown.",
+      "labels": [
+        "ROYAL GUARD"
+      ]
+    },
+    {
+      "name": "The Priest",
+      "role": "Priest who officiated Juliana's quick wedding.",
+      "labels": [
+        "THE PRIEST"
+      ]
+    },
+    {
+      "name": "Aristocratic Woman",
+      "role": "Snobbish noble companion of Gerald.",
+      "labels": [
+        "ARISTOCRATIC WOMAN"
+      ]
+    },
+    {
+      "name": "Peasant Mother",
+      "role": "Mother whose son Juliana cured of fever.",
+      "labels": [
+        "PEASANT MOTHER"
+      ]
+    },
+    {
+      "name": "Constable",
+      "role": "Local law officer who arrested Alexander for planted theft.",
+      "labels": [
+        "CONSTABLE"
+      ]
+    },
+    {
+      "name": "Thug with Cap",
+      "role": "Hired thug who raided Juliana's garden.",
+      "labels": [
+        "THUG WITH CAP"
+      ]
+    },
+    {
+      "name": "Bald Thug",
+      "role": "Hired thug attacking Juliana's herbal garden.",
+      "labels": [
+        "BALD THUG"
+      ]
+    },
+    {
+      "name": "Tall Thug",
+      "role": "Thug hired by Gerald.",
+      "labels": [
+        "TALL THUG"
+      ]
+    },
+    {
+      "name": "Third Thug",
+      "role": "Assailant in garden raid.",
+      "labels": [
+        "THIRD THUG"
+      ]
+    },
+    {
+      "name": "Elder Villager",
+      "role": "Grateful villager offering shelter to Juliana.",
+      "labels": [
+        "ELDER VILLAGER"
+      ]
+    },
+    {
+      "name": "Informant",
+      "role": "Alexander's loyal spy in Ashburg.",
+      "labels": [
+        "INFORMANT"
+      ]
+    },
+    {
+      "name": "Seamus",
+      "role": "Villager helping Juliana with her remedies.",
+      "labels": [
+        "SEAMUS"
+      ]
+    },
+    {
+      "name": "Housekeeper",
+      "role": "Head housekeeper at Ashbury Manor.",
+      "labels": [
+        "HOUSEKEEPER"
+      ]
+    },
+    {
+      "name": "Noblewoman",
+      "role": "Cruel noblewoman who whipped Juliana with a crop.",
+      "labels": [
+        "NOBLEWOMAN"
+      ]
+    },
+    {
+      "name": "Guard",
+      "role": "Dungeon guard who showed Juliana compassion.",
+      "labels": [
+        "GUARD"
+      ]
+    },
+    {
+      "name": "Elder Nobleman",
+      "role": "Conspirator suggesting witchcraft charges against Juliana.",
+      "labels": [
+        "ELDER NOBLEMAN"
+      ]
+    },
+    {
+      "name": "Lord",
+      "role": "Corrupt lord coercing Prudence to testify against Juliana.",
+      "labels": [
+        "LORD"
+      ]
+    },
+    {
+      "name": "Maid",
+      "role": "Witness coerced into testifying against Juliana.",
+      "labels": [
+        "MAID"
+      ]
+    },
+    {
+      "name": "Judge",
+      "role": "Magistrate presiding over Juliana's witchcraft trial.",
+      "labels": [
+        "JUDGE"
+      ]
+    },
+    {
+      "name": "Townsman",
+      "role": "Trial witness testifying against Juliana.",
+      "labels": [
+        "TOWNSMAN"
+      ]
+    },
+    {
+      "name": "Old Woman",
+      "role": "Townswoman accusing Juliana's remedies of causing illness.",
+      "labels": [
+        "OLD WOMAN"
+      ]
+    },
+    {
+      "name": "Butler",
+      "role": "House servant delivering wedding invitation.",
+      "labels": [
+        "BUTLER"
+      ]
+    },
+    {
+      "name": "Nobleman",
+      "role": "Gossip at Clarissa's estate.",
+      "labels": [
+        "NOBLEMAN"
+      ]
+    },
+    {
+      "name": "Loyalist Scout",
+      "role": "Scout for Alexander's loyalist forces.",
+      "labels": [
+        "LOYALIST SCOUT"
+      ]
+    },
+    {
+      "name": "Loyalist Fighter",
+      "role": "Fighter aiding Alexander's cathedral raid.",
+      "labels": [
+        "LOYALIST FIGHTER"
+      ]
+    },
+    {
+      "name": "Royal Sentry",
+      "role": "Sentry guarding cathedral.",
+      "labels": [
+        "ROYAL SENTRY"
+      ]
+    },
+    {
+      "name": "Cart Driver",
+      "role": "Loyalist driver assisting cathedral infiltration.",
+      "labels": [
+        "CART DRIVER"
+      ]
+    },
+    {
+      "name": "Loyalist",
+      "role": "Soldier loyal to Duke Alexander.",
+      "labels": [
+        "LOYALIST"
+      ]
+    },
+    {
+      "name": "Footman",
+      "role": "Cathedral wedding footman announcing guests.",
+      "labels": [
+        "FOOTMAN"
+      ]
+    },
+    {
+      "name": "Lady Harrington",
+      "role": "Noblewoman attending wedding.",
+      "labels": [
+        "LADY HARRINGTON"
+      ]
+    },
+    {
+      "name": "Lord Harrington",
+      "role": "Gerald's family member attending wedding.",
+      "labels": [
+        "LORD HARRINGTON"
+      ]
+    },
+    {
+      "name": "Priest",
+      "role": "Officiating priest at Rupert's interrupted wedding.",
+      "labels": [
+        "PRIEST"
+      ]
+    },
+    {
+      "name": "Crown Official",
+      "role": "Crown representative reading intelligence reports.",
+      "labels": [
+        "CROWN OFFICIAL"
+      ]
+    },
+    {
+      "name": "Police Constable",
+      "role": "Officer arresting Lord Sterling.",
+      "labels": [
+        "POLICE CONSTABLE"
+      ]
+    },
+    {
+      "name": "High Priest",
+      "role": "Ecclesiastical authority invalidating Juliana's marriage.",
+      "labels": [
+        "HIGH PRIEST"
+      ]
+    },
+    {
+      "name": "Conspirator",
+      "role": "Ally helping Catherine scheme against Alexander.",
+      "labels": [
+        "CONSPIRATOR"
+      ]
+    },
+    {
+      "name": "Vaughn",
+      "role": "Estate guard at Ashbourne Manor.",
+      "labels": [
+        "VAUGHN"
+      ]
+    },
+    {
+      "name": "Agnes",
+      "role": "Maid assisting Catherine's secret schemes.",
+      "labels": [
+        "AGNES"
+      ]
+    }
+  ],
+  "reveals": [
+    {
+      "episode": 3,
+      "reveal": "A scarred stranger intervenes at the cathedral and proposes to the disowned Juliana.",
+      "spoiler_level": "medium"
+    },
+    {
+      "episode": 16,
+      "reveal": "Gerald Harrington hired thugs to destroy Juliana's herbal garden.",
+      "spoiler_level": "medium"
+    },
+    {
+      "episode": 19,
+      "reveal": "Rupert usurped the ducal seat while holding Alexander's mother prisoner.",
+      "spoiler_level": "high"
+    },
+    {
+      "episode": 23,
+      "reveal": "The Dowager Duchess is being slowly poisoned with arsenic rather than dying of natural causes.",
+      "spoiler_level": "high"
+    },
+    {
+      "episode": 27,
+      "reveal": "The Dowager Duchess recognizes the Ashbourne crest on Juliana's ring, linking her husband to the lost duke.",
+      "spoiler_level": "high"
+    },
+    {
+      "episode": 35,
+      "reveal": "Alexander was betrayed on the Iberian front by traitors within Ashwood.",
+      "spoiler_level": "high"
+    },
+    {
+      "episode": 42,
+      "reveal": "Alexander appears in full ducal regalia at Rupert's wedding, revealing he is alive and the rightful Duke.",
+      "spoiler_level": "high"
+    },
+    {
+      "episode": 43,
+      "reveal": "Crown intelligence reports expose Lord Sterling and Rupert Ashburn as traitors who sold Alexander's military unit to the enemy.",
+      "spoiler_level": "high"
+    },
+    {
+      "episode": 45,
+      "reveal": "The High Priest declares Alexander and Juliana's marriage invalid due to the lack of a royal ducal license.",
+      "spoiler_level": "medium"
+    }
+  ],
+  "alias": {
+    "LADY JULIANA": {
+      "name": "Lady Juliana Ashcroft",
+      "role": "Disowned noblewoman turned healer who unknowingly marries a missing duke."
+    },
+    "JULIANA": {
+      "name": "Lady Juliana Ashcroft",
+      "role": "Disowned noblewoman turned healer who unknowingly marries a missing duke."
+    },
+    "THE BEARDED STRANGER": {
+      "name": "Duke Alexander Ashburn",
+      "role": "Presumed-dead duke disguised as a scarred veteran to reclaim his title."
+    },
+    "MYSTERIOUS BEARDED MAN": {
+      "name": "Duke Alexander Ashburn",
+      "role": "Presumed-dead duke disguised as a scarred veteran to reclaim his title."
+    },
+    "SCARRED BEARDED MAN": {
+      "name": "Duke Alexander Ashburn",
+      "role": "Presumed-dead duke disguised as a scarred veteran to reclaim his title."
+    },
+    "ALEXANDER": {
+      "name": "Duke Alexander Ashburn",
+      "role": "Presumed-dead duke disguised as a scarred veteran to reclaim his title."
+    },
+    "CATHERINE": {
+      "name": "Lady Catherine",
+      "role": "Ambitious conspirator plotting to become duchess through murder and framing."
+    },
+    "LADY CATHERINE": {
+      "name": "Lady Catherine",
+      "role": "Ambitious conspirator plotting to become duchess through murder and framing."
+    },
+    "BLOND NOBLEMAN": {
+      "name": "Rupert Ashburn",
+      "role": "Alexander's treacherous cousin who usurped his title and attempted his murder."
+    },
+    "RUPERT": {
+      "name": "Rupert Ashburn",
+      "role": "Alexander's treacherous cousin who usurped his title and attempted his murder."
+    },
+    "LADY IN GOLD GOWN": {
+      "name": "Clarissa Ashcroft",
+      "role": "Juliana's cruel sister who stole her fiancé and mocked her exile."
+    },
+    "CLARISSA": {
+      "name": "Clarissa Ashcroft",
+      "role": "Juliana's cruel sister who stole her fiancé and mocked her exile."
+    },
+    "LADY CLARISSA": {
+      "name": "Clarissa Ashcroft",
+      "role": "Juliana's cruel sister who stole her fiancé and mocked her exile."
+    },
+    "THE FORMER GROOM": {
+      "name": "Gerald Harrington",
+      "role": "Juliana's shallow ex-fiancé who abandoned her at the altar."
+    },
+    "GERALD": {
+      "name": "Gerald Harrington",
+      "role": "Juliana's shallow ex-fiancé who abandoned her at the altar."
+    },
+    "MATRIARCH": {
+      "name": "Lady Ashcroft",
+      "role": "Juliana's cold stepmother who disowned her and stole her legacy."
+    },
+    "NOBLE MATRIARCH": {
+      "name": "Lady Ashcroft",
+      "role": "Juliana's cold stepmother who disowned her and stole her legacy."
+    },
+    "LADY ASHCROFT": {
+      "name": "Lady Ashcroft",
+      "role": "Juliana's cold stepmother who disowned her and stole her legacy."
+    },
+    "OFF-SCREEN VOICE": {
+      "name": "Lady Ashcroft",
+      "role": "Juliana's cold stepmother who disowned her and stole her legacy."
+    },
+    "DOWAGER DUCHESS": {
+      "name": "Dowager Duchess of Ashburn",
+      "role": "Alexander's poisoned mother who recognizes Juliana's ring and reveals the truth."
+    },
+    "ALEXANDER'S MOTHER": {
+      "name": "Dowager Duchess of Ashburn",
+      "role": "Alexander's poisoned mother who recognizes Juliana's ring and reveals the truth."
+    },
+    "LADY ASHBOURNE": {
+      "name": "Dowager Duchess of Ashburn",
+      "role": "Alexander's poisoned mother who recognizes Juliana's ring and reveals the truth."
+    },
+    "LORD STERLING": {
+      "name": "Lord Henry Sterling",
+      "role": "Treasonous noble behind Alexander's ambush and title theft."
+    },
+    "FATHER THOMAS": {
+      "name": "Father Thomas",
+      "role": "Corrupt priest conspiring with Catherine to invalidate Alexander's marriage."
+    },
+    "PRUDENCE": {
+      "name": "Prudence",
+      "role": "Village girl and scullery maid saved by Juliana who assists her."
+    },
+    "LORD ASHCROFT": {
+      "name": "Lord Ashcroft",
+      "role": "Juliana's callous father who disowned her."
+    },
+    "ROYAL GUARD": {
+      "name": "Royal Guard",
+      "role": "Guard serving the royal crown."
+    },
+    "THE PRIEST": {
+      "name": "The Priest",
+      "role": "Priest who officiated Juliana's quick wedding."
+    },
+    "ARISTOCRATIC WOMAN": {
+      "name": "Aristocratic Woman",
+      "role": "Snobbish noble companion of Gerald."
+    },
+    "PEASANT MOTHER": {
+      "name": "Peasant Mother",
+      "role": "Mother whose son Juliana cured of fever."
+    },
+    "CONSTABLE": {
+      "name": "Constable",
+      "role": "Local law officer who arrested Alexander for planted theft."
+    },
+    "THUG WITH CAP": {
+      "name": "Thug with Cap",
+      "role": "Hired thug who raided Juliana's garden."
+    },
+    "BALD THUG": {
+      "name": "Bald Thug",
+      "role": "Hired thug attacking Juliana's herbal garden."
+    },
+    "TALL THUG": {
+      "name": "Tall Thug",
+      "role": "Thug hired by Gerald."
+    },
+    "THIRD THUG": {
+      "name": "Third Thug",
+      "role": "Assailant in garden raid."
+    },
+    "ELDER VILLAGER": {
+      "name": "Elder Villager",
+      "role": "Grateful villager offering shelter to Juliana."
+    },
+    "INFORMANT": {
+      "name": "Informant",
+      "role": "Alexander's loyal spy in Ashburg."
+    },
+    "SEAMUS": {
+      "name": "Seamus",
+      "role": "Villager helping Juliana with her remedies."
+    },
+    "HOUSEKEEPER": {
+      "name": "Housekeeper",
+      "role": "Head housekeeper at Ashbury Manor."
+    },
+    "NOBLEWOMAN": {
+      "name": "Noblewoman",
+      "role": "Cruel noblewoman who whipped Juliana with a crop."
+    },
+    "GUARD": {
+      "name": "Guard",
+      "role": "Dungeon guard who showed Juliana compassion."
+    },
+    "ELDER NOBLEMAN": {
+      "name": "Elder Nobleman",
+      "role": "Conspirator suggesting witchcraft charges against Juliana."
+    },
+    "LORD": {
+      "name": "Lord",
+      "role": "Corrupt lord coercing Prudence to testify against Juliana."
+    },
+    "MAID": {
+      "name": "Maid",
+      "role": "Witness coerced into testifying against Juliana."
+    },
+    "JUDGE": {
+      "name": "Judge",
+      "role": "Magistrate presiding over Juliana's witchcraft trial."
+    },
+    "TOWNSMAN": {
+      "name": "Townsman",
+      "role": "Trial witness testifying against Juliana."
+    },
+    "OLD WOMAN": {
+      "name": "Old Woman",
+      "role": "Townswoman accusing Juliana's remedies of causing illness."
+    },
+    "BUTLER": {
+      "name": "Butler",
+      "role": "House servant delivering wedding invitation."
+    },
+    "NOBLEMAN": {
+      "name": "Nobleman",
+      "role": "Gossip at Clarissa's estate."
+    },
+    "LOYALIST SCOUT": {
+      "name": "Loyalist Scout",
+      "role": "Scout for Alexander's loyalist forces."
+    },
+    "LOYALIST FIGHTER": {
+      "name": "Loyalist Fighter",
+      "role": "Fighter aiding Alexander's cathedral raid."
+    },
+    "ROYAL SENTRY": {
+      "name": "Royal Sentry",
+      "role": "Sentry guarding cathedral."
+    },
+    "CART DRIVER": {
+      "name": "Cart Driver",
+      "role": "Loyalist driver assisting cathedral infiltration."
+    },
+    "LOYALIST": {
+      "name": "Loyalist",
+      "role": "Soldier loyal to Duke Alexander."
+    },
+    "FOOTMAN": {
+      "name": "Footman",
+      "role": "Cathedral wedding footman announcing guests."
+    },
+    "LADY HARRINGTON": {
+      "name": "Lady Harrington",
+      "role": "Noblewoman attending wedding."
+    },
+    "LORD HARRINGTON": {
+      "name": "Lord Harrington",
+      "role": "Gerald's family member attending wedding."
+    },
+    "PRIEST": {
+      "name": "Priest",
+      "role": "Officiating priest at Rupert's interrupted wedding."
+    },
+    "CROWN OFFICIAL": {
+      "name": "Crown Official",
+      "role": "Crown representative reading intelligence reports."
+    },
+    "POLICE CONSTABLE": {
+      "name": "Police Constable",
+      "role": "Officer arresting Lord Sterling."
+    },
+    "HIGH PRIEST": {
+      "name": "High Priest",
+      "role": "Ecclesiastical authority invalidating Juliana's marriage."
+    },
+    "CONSPIRATOR": {
+      "name": "Conspirator",
+      "role": "Ally helping Catherine scheme against Alexander."
+    },
+    "VAUGHN": {
+      "name": "Vaughn",
+      "role": "Estate guard at Ashbourne Manor."
+    },
+    "AGNES": {
+      "name": "Agnes",
+      "role": "Maid assisting Catherine's secret schemes."
+    }
+  },
+  "unmapped_labels": []
+}

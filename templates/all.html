@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block title %}All promos · Promo Finder{% endblock %}
+{% block width %}narrow{% endblock %}
+{% block body %}
+<h1 class="page">All {{ total }} promos</h1>
+<p class="quiet">Best first. Tap one to open it.</p>
+
+<div class="chips">
+  <a href="{{ url_for('all_promos') }}" class="chip {{ 'on' if not kind }}">All</a>
+  {% for k in kinds %}<a href="{{ url_for('all_promos', kind=k) }}" class="chip {{ 'on' if kind == k }}">{{ k }}</a>{% endfor %}
+</div>
+
+<ol class="rows">
+  {% for v in rows %}
+  <li><a href="{{ url_for('promo', pid=v.id) }}" style="--c: {{ v.colour }}">
+    <span class="num">{{ v.rank }}</span>
+    <span class="row-main"><b>{{ v.title }}</b><span class="quiet">{{ v.where }}, {{ v.seconds }} s</span></span>
+    <span class="kind">{{ v.kind }}</span>
+    {% if v.decision == 'approved' %}<span class="badge ok">Approved</span>{% elif v.decision == 'rejected' %}<span class="badge no">Rejected</span>{% endif %}
+  </a></li>
+  {% endfor %}
+</ol>
+
+<details class="plain">
+  <summary>{{ left_out|length }} more promos were considered and left out</summary>
+  <p class="quiet">They either overlapped a better promo or scored lower. They're listed here so you can check nothing good was missed.</p>
+  <ul class="left-out">
+    {% for v in left_out %}<li><a href="{{ url_for('promo', pid=v.id) }}">{{ v.title }}</a> <span class="quiet">{{ v.where }}</span></li>{% endfor %}
+  </ul>
+</details>
+
+<p class="more">Download: <a href="{{ url_for('download', what='promos.csv') }}">spreadsheet</a>,
+  <a href="{{ url_for('download', what='promos.json') }}">JSON</a>, or
+  <a href="{{ url_for('download', what='decisions.csv') }}">your approve/reject decisions</a></p>
+{% endblock %}

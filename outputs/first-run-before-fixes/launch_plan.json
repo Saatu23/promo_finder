@@ -1,0 +1,45 @@
+{
+  "strategy": "We are prioritizing early-episode, high-scoring promos to align with the Episode 1 starting point for new viewers. The selection mixes high-scoring comeback and protector tropes to test what drives initial conversion while avoiding major spoilers.",
+  "order": [
+    {
+      "id": "E02-4",
+      "reason": "Highest scoring promo with a powerful public revenge speech; perfect early funnel fit."
+    },
+    {
+      "id": "E07-3",
+      "reason": "Strong early episode protector trope with an incredible intimidation payoff."
+    },
+    {
+      "id": "E04-4",
+      "reason": "Explosive wedding premise from episode 4 directly matching the show's abandonment hook."
+    },
+    {
+      "id": "E03-4",
+      "reason": "Classic romance wish-fulfillment proposal beat to test audience appetite for the core ship."
+    },
+    {
+      "id": "E15-4",
+      "reason": "Delivers an alpha-male combat flex and emotional rescue early in the episode run."
+    },
+    {
+      "id": "E09-1",
+      "reason": "Tests medical competence and high-stakes sacrifice tropes from episode 9."
+    },
+    {
+      "id": "E12-3",
+      "reason": "High-tension blackmail and villain scheme to test pure villain-hate conversion."
+    },
+    {
+      "id": "E24-4",
+      "reason": "Fierce revenge empowerment ending guaranteeing taps despite being mid-series."
+    },
+    {
+      "id": "E18-2",
+      "reason": "Blockbuster action sequence providing high visual spectacle and emotional stakes."
+    },
+    {
+      "id": "E50-1",
+      "reason": "High-scoring intrigue hook testing darker, corrupt-authority themes."
+    }
+  ]
+}

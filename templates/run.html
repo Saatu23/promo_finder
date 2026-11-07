@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% block title %}Try another show · Promo Finder{% endblock %}
+{% block width %}narrow{% endblock %}
+{% block body %}
+<h1 class="page">Try another show</h1>
+<p class="quiet">Pick the screenplays and press the button. About 5 minutes for 10 episodes, or 20 to 25 for a whole show.</p>
+{% if error %}<p class="error">{{ error }}</p>{% endif %}
+
+<form method="post" enctype="multipart/form-data" class="panel">
+  <div class="group">
+    <p class="group-title">Which show?</p>
+    <label class="opt"><input type="radio" name="which" value="sample" checked> The sample show, I Married a Broken Soldier</label>
+    <label class="opt"><input type="radio" name="which" value="own"> My own screenplays</label>
+    <div class="file-wrap" id="filewrap" hidden>
+      <input type="file" name="files" multiple accept=".txt,.zip" class="file">
+      <p class="quiet">Add the episode files (.txt), or one .zip with all of them.</p>
+    </div>
+  </div>
+
+  <label class="field"><span class="lab">Which episodes? <span class="quiet">Leave empty for all</span></span>
+    <input name="episodes" placeholder="e.g. 1-10"></label>
+
+  <div class="group ai">
+    <label class="field"><span class="lab">AI provider</span>
+      <select name="provider" id="provider">
+        {% for k, v in providers.items() %}<option value="{{ k }}">{{ v.label }}</option>{% endfor %}
+      </select></label>
+    <label class="field" id="basewrap" hidden><span class="lab">Service address</span>
+      <input name="base_url" id="base_url" placeholder="e.g. https://api.example.com/v1"></label>
+    <label class="field" id="choicewrap"><span class="lab">Model</span>
+      <select name="model_choice" id="model_choice"></select></label>
+    <label class="field" id="modelwrap" hidden><span class="lab" id="modellab">Model name</span>
+      <input name="model" id="model" placeholder="exactly as the provider writes it" autocomplete="off" spellcheck="false">
+      <span class="quiet">Type it exactly as the provider lists it.</span></label>
+    <label class="field"><span class="lab">Your key</span>
+      <input name="key" id="key" type="password" autocomplete="off">
+      <span class="quiet" id="keyhint"></span></label>
+  </div>
+
+  <label class="opt"><input type="checkbox" name="demo"> Try without a key (quick demo, rough picks)</label>
+
+  <button class="btn primary wide">Find promos</button>
+</form>
+<script>
+  const P = {{ providers|tojson }}, saved = {{ saved|tojson }}, CUSTOM = {{ custom|tojson }};
+  const sel = document.getElementById("provider"), choice = document.getElementById("model_choice"),
+        choiceWrap = document.getElementById("choicewrap"), modelWrap = document.getElementById("modelwrap"),
+        base = document.getElementById("basewrap"), key = document.getElementById("key"), kh = document.getElementById("keyhint");
+  const showCustom = () => { modelWrap.hidden = !(choice.value === CUSTOM || P[sel.value].models.length === 0); };
+  const setProvider = () => {
+    const p = P[sel.value];
+    choice.innerHTML = "";
+    for (const [id, label] of p.models) choice.add(new Option(label, id));
+    if (p.models.length) choice.add(new Option("Another model (type its name)", CUSTOM));
+    choiceWrap.hidden = p.models.length === 0;
+    showCustom();
+    base.hidden = sel.value !== "other";
+    key.placeholder = saved[sel.value] ? "Your saved key will be used" : "Paste it here";
+    kh.textContent = p.key_hint + ". It's only used for this run.";
+  };
+  choice.addEventListener("change", showCustom);
+  sel.addEventListener("change", setProvider); setProvider();
+  const wrap = document.getElementById("filewrap");
+  document.querySelectorAll("input[name=which]").forEach(r =>
+    r.addEventListener("change", () => { wrap.hidden = document.querySelector("input[name=which]:checked").value !== "own"; }));
+</script>
+{% endblock %}

@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}Promo Finder{% endblock %}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Catamaran:wght@400;500;600;700&family=Courier+Prime&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <header class="bar">
+    <div class="bar-in">
+      <a class="brand" href="{{ url_for('home') }}">Promo Finder</a>
+      <span class="tagline">find the moments worth posting</span>
+      <nav>
+        <a href="{{ url_for('home') }}" class="{{ 'on' if request.endpoint == 'home' }}">Post first</a>
+        <a href="{{ url_for('all_promos') }}" class="{{ 'on' if request.endpoint == 'all_promos' }}">All promos</a>
+        <a href="{{ url_for('how') }}" class="{{ 'on' if request.endpoint == 'how' }}">How it works</a>
+        <a href="{{ url_for('run_form') }}" class="btn-small {{ 'on' if request.endpoint in ('run_form', 'job_page') }}">Try another show</a>
+      </nav>
+    </div>
+  </header>
+  {% if live %}
+  <div class="live">
+    <span>You're looking at a new run: <b>{{ run_title }}</b>.</span>
+    <form method="post" action="{{ url_for('back_to_saved') }}"><button class="link">Back to the saved sample results</button></form>
+  </div>
+  {% endif %}
+  <main class="{% block width %}wide{% endblock %}">
+    {% block body %}{% endblock %}
+  </main>
+  <footer class="foot">Promo Finder reads microdrama screenplays and suggests 20 to 60 second promos. A person approves every one before it's posted.</footer>
+</body>
+</html>

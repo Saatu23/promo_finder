@@ -1,0 +1,7 @@
+.env
+.cache/
+__pycache__/
+*.pyc
+
+# editor decisions made in the web app
+outputs/**/decisions.json

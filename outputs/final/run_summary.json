@@ -1,0 +1,117 @@
+{
+  "show": {
+    "episodes": 50,
+    "minutes": 102.7,
+    "premise": "After being abandoned at the altar, a disgraced noblewoman marries a scarred stranger, unknowingly tying her fate to a presumed-dead duke seeking vengeance."
+  },
+  "stats": {
+    "speaker_labels": 64,
+    "speaker_labels_unmapped": 0,
+    "proposed": 200,
+    "failed_rules_first_try": 32,
+    "near_duplicates_in_episode": 4,
+    "repaired_ok": 54,
+    "repair_resent_passing": 51,
+    "relabelled_to_continuation_episode": 2,
+    "repair_still_invalid": 3,
+    "rule_failures": {
+      "hook later than 3s": 21,
+      "too long (>60s)": 2,
+      "hook outside first segment": 2,
+      "too short (<20s)": 10
+    },
+    "seconds": 0.3,
+    "data_warnings": {},
+    "fresh_run_seconds": 1434.2,
+    "fresh_run_note": "wall time of the first uncached run on these 50 episodes (free key, Gemini rate limits); later runs reused its cached answers"
+  },
+  "usage": {
+    "calls": 276,
+    "cached_calls": 276,
+    "by_stage": {
+      "bible": {
+        "calls": 1,
+        "prompt_tokens": 25125,
+        "output_tokens": 8266,
+        "cost_usd": 0.112082,
+        "model": "gemini:gemini-3.5-flash",
+        "models": {
+          "gemini:gemini-3.5-flash": 1
+        },
+        "cached": 1
+      },
+      "propose": {
+        "calls": 22,
+        "prompt_tokens": 347925,
+        "output_tokens": 229901,
+        "cost_usd": 1.158436,
+        "model": "gemini:gemini-3.5-flash, gemini:gemini-3-flash-preview, gemini:gemini-3.5-flash-lite",
+        "models": {
+          "gemini:gemini-3.5-flash": 5,
+          "gemini:gemini-3-flash-preview": 13,
+          "gemini:gemini-3.5-flash-lite": 4
+        },
+        "cached": 22
+      },
+      "repair": {
+        "calls": 11,
+        "prompt_tokens": 172381,
+        "output_tokens": 92368,
+        "cost_usd": 0.41609,
+        "model": "gemini:gemini-3.5-flash, gemini:gemini-3-flash-preview, gemini:gemini-3.5-flash-lite",
+        "models": {
+          "gemini:gemini-3.5-flash": 2,
+          "gemini:gemini-3-flash-preview": 6,
+          "gemini:gemini-3.5-flash-lite": 3
+        },
+        "cached": 11
+      },
+      "blind": {
+        "calls": 218,
+        "prompt_tokens": 198230,
+        "output_tokens": 32759,
+        "cost_usd": 0.098701,
+        "model": "gemini:gemini-3.1-flash-lite",
+        "models": {
+          "gemini:gemini-3.1-flash-lite": 218
+        },
+        "cached": 218
+      },
+      "judge": {
+        "calls": 23,
+        "prompt_tokens": 342461,
+        "output_tokens": 44605,
+        "cost_usd": 0.261885,
+        "model": "gemini:gemini-3-flash-preview, gemini:gemini-3.5-flash, gemini:gemini-3.5-flash-lite",
+        "models": {
+          "gemini:gemini-3-flash-preview": 1,
+          "gemini:gemini-3.5-flash": 1,
+          "gemini:gemini-3.5-flash-lite": 21
+        },
+        "cached": 23
+      },
+      "plan": {
+        "calls": 1,
+        "prompt_tokens": 2007,
+        "output_tokens": 440,
+        "cost_usd": 0.001702,
+        "model": "gemini:gemini-3.5-flash-lite",
+        "models": {
+          "gemini:gemini-3.5-flash-lite": 1
+        },
+        "cached": 1
+      }
+    },
+    "prompt_tokens": 1088129,
+    "output_tokens": 408339,
+    "cost_usd_this_run": 2.0489,
+    "fallbacks_used": []
+  },
+  "models": {
+    "bible": "gemini:gemini-3.5-flash",
+    "propose": "gemini:gemini-3.5-flash",
+    "blind": "gemini:gemini-3.1-flash-lite",
+    "judge": "gemini:gemini-3.5-flash",
+    "plan": "gemini:gemini-3.5-flash"
+  }
+}
